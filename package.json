@@ -4,10 +4,10 @@
   "description": "Blood on the Clocktower Town Square",
   "author": "Pingumaskt",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0 --port 8081",
     "build": "vite build",
     "serve": "vite preview",
-	"watch": "watch 'npm run build' ../src",
+    "watch": "watch 'npm run build' ../src",
     "lint": "eslint src --fix",
     "lint-check": "eslint src --no-fix --max-warnings=0"
   },

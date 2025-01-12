@@ -1,6 +1,6 @@
 import fs from "fs";
 import https from "https";
-import WebSocket from "ws";
+import { WebSocketServer } from "ws";
 import client from "prom-client";
 
 // Create a Registry which registers the metrics
@@ -14,18 +14,17 @@ const PING_INTERVAL = 30000; // 30 seconds
 
 const options = {};
 
-if (process.env.NODE_ENV !== "development") {
+if (process.env.NODE_ENV !== "development") { 
   options.cert = fs.readFileSync("cert.pem");
   options.key = fs.readFileSync("key.pem");
 }
 
 const server = https.createServer(options);
-const wss = new WebSocket.Server({
+const wss = new WebSocketServer({
   ...(process.env.NODE_ENV === "development" ? { port: 8081 } : { server }),
   verifyClient: (info) =>
-    info.origin &&
     !!info.origin.match(
-      /^https?:\/\/([^.]+\.github\.io|localhost|clocktower\.online|eddbra1nprivatetownsquare\.xyz)/i,
+      /^https?:\/\/([^.]+\.github\.io|localhost|live\.clocktower\.online|eddbra1nprivatetownsquare\.xyz|townsquare-omega\.vercel\.app)/i,
     ),
 });
 
