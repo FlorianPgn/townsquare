@@ -62,13 +62,13 @@
   },
   {
     "id": "empath",
-    "name": "Empathe",
+    "name": "Empathique",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 49,
-    "firstNightReminder": "Indiquez combien de joueurs sont Mauvais parmi les voisins de l'Empathe.",
+    "firstNightReminder": "Indiquez combien de joueurs sont Mauvais parmi les voisins de l'Empathique.",
     "otherNight": 66,
-    "otherNightReminder": "Indiquez combien de joueurs sont Mauvais parmi les voisins vivants de l'Empathe.",
+    "otherNightReminder": "Indiquez combien de joueurs sont Mauvais parmi les voisins vivants de l'Empathique.",
     "reminders": [],
     "setup": false,
     "ability": "Chaque nuit, vous apprenez combien de joueurs sont Mauvais parmi vos voisins vivants."
@@ -86,11 +86,11 @@
       "Fausse piste"
     ],
     "setup": false,
-    "ability": "Chaque nuit, désignez 2 joueurs : vous apprenez si l'un des deux est Démon. L'un des joueurs bons vous apparaît comme un Démon aussi."
+    "ability": "Chaque nuit, désignez 2 joueurs : vous apprenez si l'un des deux est un Démon. Un des joueurs Bons vous apparaît comme un Démon aussi."
   },
   {
     "id": "undertaker",
-    "name": "Fossoyeur",
+    "name": "Croque-mort",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
@@ -116,11 +116,11 @@
       "Protégé"
     ],
     "setup": false,
-    "ability": "Chaque nuit*, désignez un joueur (autre que vous-même) : il est à l'abri du Démon cette nuit."
+    "ability": "Chaque nuit*, désignez un joueur (autre que vous-même) : il est à l'abri d'une mort par Démon cette nuit."
   },
   {
     "id": "ravenkeeper",
-    "name": "Ami des corbeaux",
+    "name": "Ami corbeau",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
@@ -144,11 +144,11 @@
       "Épuisé"
     ],
     "setup": false,
-    "ability": "La première fois que vous êtes accusé, si l'accusateur est un Villageois, il est exécuté immédiatement."
+    "ability": "La première fois que vous êtes mise en nomination, si le proposant est un Villageois, il est exécuté immédiatement."
   },
   {
     "id": "slayer",
-    "name": "Tueur",
+    "name": "Mercenaire",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
@@ -185,7 +185,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "S'il y a 3 joueurs en vie & s'il n'y a pas d'exécution, votre équipe gagne. Si vous mourez la nuit, il se peut qu'un autre joueur meure à la place."
+    "ability": "S'il y a 3 joueurs en vie (dont vous) & s'il n'y a pas d'exécution, votre équipe gagne. Si vous deviez mourir la nuit, il se peut qu'un autre joueur meure à la place."
   },
   {
     "id": "butler",
@@ -229,7 +229,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Il se peut que vous apparaissiez comme mauvais et comme Sbire ou Démon, même après votre mort."
+    "ability": "Il se peut que vous apparaissiez comme mauvais (Sbire ou Démon), même après votre mort."
   },
   {
     "id": "saint",
@@ -257,7 +257,7 @@
       "Empoisonné"
     ],
     "setup": false,
-    "ability": "Chaque nuit, désignez un joueur : il est empoisonné jusqu'à la tombée de la nuit."
+    "ability": "Chaque nuit, désignez un joueur : il est empoisonné cette nuit ainsi que le jour suivant."
   },
   {
     "id": "spy",
@@ -270,22 +270,22 @@
     "otherNightReminder": "Montrez votre grimoire à l'Espion aussi longtemps qu'il en a besoin.",
     "reminders": [],
     "setup": false,
-    "ability": "Chaque nuit, vous voyez le Grimoire. Il se peut que vous apparaissiez comme bon et comme Villageois ou Étranger, même après votre mort."
+    "ability": "Chaque nuit, vous voyez le Grimoire. Il se peut que vous apparaissiez comme bon (Villageois ou Étranger), même après votre mort."
   },
   {
     "id": "scarletwoman",
-    "name": "Gourgandine",
+    "name": "Croqueuse",
     "edition": "tb",
     "team": "minion",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 26,
-    "otherNightReminder": "Si le Démon est mort (et que la partie n'a pas pris fin), informez la Gourgandine qu'elle devient le Démon.",
+    "otherNightReminder": "Si le Démon est mort (et que la partie n'a pas pris fin), informez la Croqueuse d'homme qu'elle devient le Démon.",
     "reminders": [
       "Démon"
     ],
     "setup": false,
-    "ability": "S'il y a au moins 5 joueurs en vie au moment de la mort du Démon, vous devenez le Démon. (Les voyageurs ne comptent pas)"
+    "ability": "S'il y a au moins 5 joueurs en vie au moment de la mort du Démon, vous devenez le Démon. (Les Voyageurs ne comptent pas)"
   },
   {
     "id": "baron",
@@ -467,7 +467,7 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 14,
-    "otherNightReminder": "Le Parieur désigne un joueur, et un rôle. S'ils ne correspondent pas, le Parieur meurt.",
+    "otherNightReminder": "Le Parieur désigne un joueur, et un personnage. S'ils ne correspondent pas, le Parieur meurt.",
     "reminders": [
       "Mort"
     ],

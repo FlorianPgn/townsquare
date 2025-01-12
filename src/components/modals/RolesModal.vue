@@ -53,6 +53,10 @@
         <font-awesome-icon icon="random" class="fa fa-random" />
         {{ locale.modal.roles.shuffle }}
       </div>
+      <div class="button" @click="exportPrintable">
+        <font-awesome-icon icon="file-pdf" />
+        Export Tokens
+      </div>
     </div>
   </Modal>
 </template>
@@ -63,6 +67,20 @@ import { useStore } from 'vuex';
 import Modal from "./Modal.vue";
 import gameJSON from "../../game.json";
 import Token from "../Token.vue";
+
+const papyrusUrl = new URL('../../assets/fonts/papyrus.ttf', import.meta.url).href;
+const tokenBgUrl = new URL('../../assets/token.png', import.meta.url).href;
+const leafLeftUrl = new URL('../../assets/leaf-left.png', import.meta.url).href;
+const leafRightUrl = new URL('../../assets/leaf-right.png', import.meta.url).href;
+const leafOrangeUrl = new URL('../../assets/leaf-orange.png', import.meta.url).href;
+
+const getRoleImageUrl = (role) => {
+  console.log(role);
+  return new URL(
+    `../../assets/icons/${role.id}.png`,
+    import.meta.url
+  ).href;
+};
 
 const randomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -152,6 +170,185 @@ const assignRoles = () => {
       }
     });
     store.commit("toggleModal", "roles");
+  }
+};
+
+const exportPrintable = () => {
+  // Get selected roles
+  const selectedRoles = Object.values(roleSelection.value)
+    .flatMap(roles => 
+      roles.filter(role => role.selected)
+        .flatMap(role => Array(role.selected).fill(role))
+    );
+
+  // Create HTML content
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Character Reference Sheet</title>
+        <style>
+          @font-face {
+            font-family: "Papyrus";
+            src: url("${papyrusUrl}") format("truetype");
+          }
+          body { 
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+          }
+          .role-card {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            page-break-inside: avoid;
+          }
+          .token-wrapper {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            margin-right: 20px;
+          }
+          .token {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: url("${tokenBgUrl}") center center;
+            background-size: 100%;
+            text-align: center;
+            border: 3px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+          }
+          .icon {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin-top: 3%;
+            z-index: 1;
+          }
+          .name {
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            position: relative;
+            z-index: 2;
+          }
+          .label {
+            fill: black;
+            stroke: white;
+            stroke-width: 2px;
+            paint-order: stroke;
+            font-family: "Papyrus", serif;
+            font-weight: bold;
+            text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+          }
+          .role-info {
+            flex-grow: 1;
+          }
+          .role-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+          .role-ability {
+            font-size: 1.1em;
+            color: #333;
+          }
+          .leaf-left, .leaf-right, .leaf-orange {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+          }
+          .leaf-left {
+            background-image: url("${leafLeftUrl}");
+          }
+          .leaf-right {
+            background-image: url("${leafRightUrl}");
+          }
+          .leaf-orange {
+            background-image: url("${leafOrangeUrl}");
+          }
+          @media print {
+            @page { margin: 1cm; }
+            .role-card {
+              break-inside: avoid;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        ${selectedRoles.map(role => {
+          const roleImageUrl = getRoleImageUrl(role);
+          return `
+            <div class="role-card">
+              <div class="token-wrapper">
+                <div class="token ${role.team}">
+                  <span 
+                    class="icon" 
+                    style="background-image: url('${roleImageUrl}')">
+                  </span>
+                  <svg viewBox="0 0 150 150" class="name">
+                    <path
+                      d="M 13 75 C 13 160, 138 160, 138 75"
+                      id="curve-${role.id}"
+                      fill="transparent"
+                    />
+                    <text
+                      width="150"
+                      x="66.6%"
+                      text-anchor="middle"
+                      class="label"
+                      font-size="${role.name && role.name.length > 10 ? '90%' : '110%'}"
+                    >
+                      <textPath xlink:href="#curve-${role.id}">
+                        ${role.name}
+                      </textPath>
+                    </text>
+                  </svg>
+                  ${role.firstNight || role.firstNightReminder ? '<span class="leaf-left"></span>' : ''}
+                  ${role.otherNight || role.otherNightReminder ? '<span class="leaf-right"></span>' : ''}
+                  ${role.setup ? '<span class="leaf-orange"></span>' : ''}
+                </div>
+              </div>
+              <div class="role-info">
+                <div class="role-name">${role.name}</div>
+                <div class="role-ability">${role.ability}</div>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </body>
+    </html>
+  `;
+
+  // Create blob and object URL
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+
+  // Open in new tab
+  const newTab = window.open(url, '_blank');
+
+  // Clean up the object URL after the new tab is loaded
+  if (newTab) {
+    newTab.onload = () => {
+      URL.revokeObjectURL(url);
+    };
   }
 };
 
