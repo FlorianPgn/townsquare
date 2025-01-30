@@ -187,7 +187,7 @@ const exportPrintable = () => {
     <html>
       <head>
         <meta charset="UTF-8">
-        <title>Character Reference Sheet</title>
+        <title>Character Tokens</title>
         <style>
           @font-face {
             font-family: "Papyrus";
@@ -195,24 +195,15 @@ const exportPrintable = () => {
           }
           body { 
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 20px;
             padding: 20px;
-            font-family: Arial, sans-serif;
-          }
-          .role-card {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            page-break-inside: avoid;
+            justify-content: center;
           }
           .token-wrapper {
-            width: 100px;
-            height: 100px;
-            flex-shrink: 0;
-            margin-right: 20px;
+            width: 150px;
+            height: 150px;
+            page-break-inside: avoid;
           }
           .token {
             width: 100%;
@@ -256,18 +247,6 @@ const exportPrintable = () => {
             text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
             letter-spacing: 1px;
           }
-          .role-info {
-            flex-grow: 1;
-          }
-          .role-name {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 5px;
-          }
-          .role-ability {
-            font-size: 1.1em;
-            color: #333;
-          }
           .leaf-left, .leaf-right, .leaf-orange {
             position: absolute;
             width: 100%;
@@ -286,8 +265,10 @@ const exportPrintable = () => {
           }
           @media print {
             @page { margin: 1cm; }
-            .role-card {
-              break-inside: avoid;
+            body { gap: 10px; }
+            .token-wrapper {
+              width: 120px;
+              height: 120px;
             }
           }
         </style>
@@ -296,39 +277,33 @@ const exportPrintable = () => {
         ${selectedRoles.map(role => {
           const roleImageUrl = getRoleImageUrl(role);
           return `
-            <div class="role-card">
-              <div class="token-wrapper">
-                <div class="token ${role.team}">
-                  <span 
-                    class="icon" 
-                    style="background-image: url('${roleImageUrl}')">
-                  </span>
-                  <svg viewBox="0 0 150 150" class="name">
-                    <path
-                      d="M 13 75 C 13 160, 138 160, 138 75"
-                      id="curve-${role.id}"
-                      fill="transparent"
-                    />
-                    <text
-                      width="150"
-                      x="66.6%"
-                      text-anchor="middle"
-                      class="label"
-                      font-size="${role.name && role.name.length > 10 ? '90%' : '110%'}"
-                    >
-                      <textPath xlink:href="#curve-${role.id}">
-                        ${role.name}
-                      </textPath>
-                    </text>
-                  </svg>
-                  ${role.firstNight || role.firstNightReminder ? '<span class="leaf-left"></span>' : ''}
-                  ${role.otherNight || role.otherNightReminder ? '<span class="leaf-right"></span>' : ''}
-                  ${role.setup ? '<span class="leaf-orange"></span>' : ''}
-                </div>
-              </div>
-              <div class="role-info">
-                <div class="role-name">${role.name}</div>
-                <div class="role-ability">${role.ability}</div>
+            <div class="token-wrapper">
+              <div class="token ${role.team}">
+                <span 
+                  class="icon" 
+                  style="background-image: url('${roleImageUrl}')">
+                </span>
+                <svg viewBox="0 0 150 150" class="name">
+                  <path
+                    d="M 13 75 C 13 160, 138 160, 138 75"
+                    id="curve-${role.id}"
+                    fill="transparent"
+                  />
+                  <text
+                    width="150"
+                    x="66.6%"
+                    text-anchor="middle"
+                    class="label"
+                    font-size="${role.name && role.name.length > 10 ? '90%' : '110%'}"
+                  >
+                    <textPath xlink:href="#curve-${role.id}">
+                      ${role.name}
+                    </textPath>
+                  </text>
+                </svg>
+                ${role.firstNight || role.firstNightReminder ? '<span class="leaf-left"></span>' : ''}
+                ${role.otherNight || role.otherNightReminder ? '<span class="leaf-right"></span>' : ''}
+                ${role.setup ? '<span class="leaf-orange"></span>' : ''}
               </div>
             </div>
           `;

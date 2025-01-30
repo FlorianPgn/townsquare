@@ -17,7 +17,7 @@
   },
   {
     "id": "librarian",
-    "name": "Bibliothécaire",
+    "name": "Libraire",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 46,
@@ -120,13 +120,13 @@
   },
   {
     "id": "ravenkeeper",
-    "name": "Ami corbeau",
+    "name": "Ami du corbeau",
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 65,
-    "otherNightReminder": "Si l'Ami des corbeaux est mort cette nuit, il désigne un joueur. Indiquez le personnage de ce joueur.",
+    "otherNightReminder": "Si l'Ami du corbeau est mort cette nuit, il désigne un joueur. Indiquez le personnage de ce joueur.",
     "reminders": [],
     "setup": false,
     "ability": "Si vous mourez la nuit, vous êtes réveillé pour désigner un joueur et apprenez son personnage."
@@ -274,13 +274,13 @@
   },
   {
     "id": "scarletwoman",
-    "name": "Croqueuse",
+    "name": "Débauchée",
     "edition": "tb",
     "team": "minion",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 26,
-    "otherNightReminder": "Si le Démon est mort (et que la partie n'a pas pris fin), informez la Croqueuse d'homme qu'elle devient le Démon.",
+    "otherNightReminder": "Si le Démon est mort (et que la partie n'a pas pris fin), informez la Débauchée qu'elle devient le Démon.",
     "reminders": [
       "Démon"
     ],
