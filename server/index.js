@@ -24,7 +24,7 @@ const wss = new WebSocketServer({
   ...(process.env.NODE_ENV === "development" ? { port: 8081 } : { server }),
   verifyClient: (info) =>
     !!info.origin.match(
-      /^https?:\/\/([^.]+\.github\.io|localhost|live\.clocktower\.online|eddbra1nprivatetownsquare\.xyz|townsquare-omega\.vercel\.app)/i,
+      /^https?:\/\/([^.]+\.github\.io|localhost|live\.clocktower\.online|townsquare-omega\.vercel\.app)/i,
     ),
 });
 

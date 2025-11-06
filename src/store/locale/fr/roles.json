@@ -21,15 +21,15 @@
     "edition": "tb",
     "team": "townsfolk",
     "firstNight": 46,
-    "firstNightReminder": "Indiquez un personnage d'Étranger en jeu et deux joueurs. L'un de ces joueurs est ce personnage. (S'il n'y a pas d'Étranger, indiquez le).",
+    "firstNightReminder": "Indiquez un personnage Paria en jeu et deux joueurs. L'un de ces joueurs est ce personnage. (S'il n'y a pas de Paria, indiquez le).",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [
-      "Étranger",
+      "Paria",
       "Faux"
     ],
     "setup": false,
-    "ability": "Vous commencez la partie en sachant qu'un joueur parmi deux est un Étranger spécifique (ou qu'aucun Étranger n'est en jeu)."
+    "ability": "Vous commencez la partie en sachant qu'un joueur parmi deux est un Paria spécifique (ou qu'aucun Paria n'est en jeu)."
   },
   {
     "id": "investigator",
@@ -270,7 +270,7 @@
     "otherNightReminder": "Montrez votre grimoire à l'Espion aussi longtemps qu'il en a besoin.",
     "reminders": [],
     "setup": false,
-    "ability": "Chaque nuit, vous voyez le Grimoire. Il se peut que vous apparaissiez comme bon (Villageois ou Étranger), même après votre mort."
+    "ability": "Chaque nuit, vous voyez le Grimoire. Il se peut que vous apparaissiez comme bon (Villageois ou Paria), même après votre mort."
   },
   {
     "id": "scarletwoman",
@@ -298,7 +298,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": true,
-    "ability": "Il y a des Étrangers supplémentaires en jeu. [+2 Étrangers]"
+    "ability": "Il y a des Parias supplémentaires en jeu. [+2 Parias]"
   },
   {
     "id": "imp",
@@ -482,7 +482,7 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 51,
-    "otherNightReminder": "Si les annonces publiques de la Commère étaient vraie aujourd'hui, choisisser un joueur non protégé. Ce joueur meurt.",
+    "otherNightReminder": "Si les annonces publiques de la Commère étaient vraie aujourd'hui, choisir un joueur non protégé. Ce joueur meurt.",
     "reminders": [
       "Mort"
     ],
@@ -540,7 +540,7 @@
   },
   {
     "id": "tealady",
-    "name": "Serveuse de thé",
+    "name": "Herboriste",
     "edition": "bmr",
     "team": "townsfolk",
     "firstNight": 0,
@@ -649,15 +649,15 @@
     "edition": "bmr",
     "team": "minion",
     "firstNight": 32,
-    "firstNightReminder": "Dévoilez les rôles d'Étrangers en jeu.",
+    "firstNightReminder": "Dévoilez les rôles de Parias en jeu.",
     "otherNight": 50,
-    "otherNightReminder": "Si un Étranger est mort aujourd'hui, le Parrain désigne un joueur. Ce joueur meurt.",
+    "otherNightReminder": "Si un Paria est mort aujourd'hui, le Parrain désigne un joueur. Ce joueur meurt.",
     "reminders": [
       "Mort aujourd'hui",
       "Mort"
     ],
     "setup": true,
-    "ability": "Vous commencez en connaissant les Étrangers en jeu. Si l'un est mort aujourd'hui, désignez un joueur cette nuit : il meurt. [-1 ou +1 Étranger]"
+    "ability": "Vous commencez en connaissant les Parias en jeu. Si l'un est mort aujourd'hui, désignez un joueur cette nuit : il meurt. [-1 ou +1 Paria]"
   },
   {
     "id": "devilsadvocate",
@@ -912,7 +912,7 @@
   },
   {
     "id": "towncrier",
-    "name": "Crieur public",
+    "name": "Crieur de Rue",
     "edition": "snv",
     "team": "townsfolk",
     "firstNight": 0,
@@ -954,13 +954,13 @@
   },
   {
     "id": "seamstress",
-    "name": "Couturière",
+    "name": "Styliste",
     "edition": "snv",
     "team": "townsfolk",
     "firstNight": 55,
-    "firstNightReminder": "Si la Couturière désigne 2 joueurs, indiquez si ces joueurs sont dans la même équipe.",
+    "firstNightReminder": "Si la Styliste désigne 2 joueurs, indiquez si ces joueurs sont dans la même équipe.",
     "otherNight": 73,
-    "otherNightReminder": "Si la Couturière n'a pas encore utilisé sa capacité et qu'il désigne 2 joueurs, indiquez si ces joueurs sont du même alignement.",
+    "otherNightReminder": "Si la Styliste n'a pas encore utilisé sa capacité et qu'il désigne 2 joueurs, indiquez si ces joueurs sont du même alignement.",
     "reminders": [
       "Épuisé"
     ],
@@ -1030,7 +1030,7 @@
   },
   {
     "id": "mutant",
-    "name": "Mutant",
+    "name": "Bête de Foire",
     "edition": "snv",
     "team": "outsider",
     "firstNight": 0,
@@ -1039,17 +1039,17 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Si vous êtes persuadé d’être un Étranger, il se peut que vous soyez exécuté."
+    "ability": "Si vous êtes persuadé d’être un Paria, il se peut que vous soyez exécuté."
   },
   {
     "id": "sweetheart",
-    "name": "Bien-aimé",
+    "name": "Dulcinée",
     "edition": "snv",
     "team": "outsider",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 54,
-    "otherNightReminder": "Si le Bien-aimé est mort aujourd'hui, choisissez un joueur qui sera définitivement Ivre.",
+    "otherNightReminder": "Si le Dulcinée est mort aujourd'hui, choisissez un joueur qui sera définitivement Ivre.",
     "reminders": [
       "Ivre"
     ],
@@ -1073,7 +1073,7 @@
   },
   {
     "id": "klutz",
-    "name": "Empoté",
+    "name": "Maladroit",
     "edition": "snv",
     "team": "outsider",
     "firstNight": 0,
@@ -1086,7 +1086,7 @@
   },
   {
     "id": "eviltwin",
-    "name": "Jumeau maléfique",
+    "name": "Jumeau Maléfique",
     "edition": "snv",
     "team": "minion",
     "firstNight": 35,
@@ -1117,13 +1117,13 @@
   },
   {
     "id": "cerenovus",
-    "name": "Cerenovus",
+    "name": "Ceranovus",
     "edition": "snv",
     "team": "minion",
     "firstNight": 37,
-    "firstNightReminder": "Le Cerenovus désigne un joueur et un personnage. Reveillez ce joueur. Informez-le qu'il est persuadé d'être ce personnage. S'il n'est pas convaincant, il peut être exécuté.",
+    "firstNightReminder": "Le Ceranovus désigne un joueur et un personnage. Reveillez ce joueur. Informez-le qu'il est persuadé d'être ce personnage. S'il n'est pas convaincant, il peut être exécuté.",
     "otherNight": 21,
-    "otherNightReminder": "Le Cerenovus désigne un joueur et un personnage. Reveillez ce joueur. Informez-le qu'il est persuadé d'être ce personnage. S'il n'est pas convaincant, il peut être exécuté.",
+    "otherNightReminder": "Le Ceranovus désigne un joueur et un personnage. Reveillez ce joueur. Informez-le qu'il est persuadé d'être ce personnage. S'il n'est pas convaincant, il peut être exécuté.",
     "reminders": [
       "Persuadé"
     ],
@@ -1132,13 +1132,13 @@
   },
   {
     "id": "pithag",
-    "name": "Chaudronnier",
+    "name": "Ensorceleuse",
     "edition": "snv",
     "team": "minion",
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 22,
-    "otherNightReminder": "Le Chaudronnier désigne un joueur et un personnage. Si ce personnage n'est pas en jeu, réveillez ce joueur et dévoillez-lui son nouveau personnage. Si le personnage est déjà en jeu, rien ne se passe.",
+    "otherNightReminder": "L'Ensorceleuse désigne un joueur et un personnage. Si ce personnage n'est pas en jeu, réveillez ce joueur et dévoillez-lui son nouveau personnage. Si le personnage est déjà en jeu, rien ne se passe.",
     "reminders": [],
     "setup": false,
     "ability": "Chaque nuit*, désignez un joueur et le personnage qu’il devient (si pas en jeu). Si un Démon est créé, les morts cette nuit sont arbitraires."
@@ -1151,7 +1151,7 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 38,
-    "otherNightReminder": "Le Fang Gu désigne un joueur. Si ce joueur n'est pas un Étranger, il meurt. Si ce personnage est un Étranger et qu'il n'y a qu'un seul Fang gu en jeu, le Fang Gu meurt à la place du joueur désigné. Le joueur désigné devient un Fang Gu et rejoint l'équipe des Mauvais. Réveillez le nouveau Fang Gu. Indiquez-lui son nouveau rôle.",
+    "otherNightReminder": "Le Fang Gu désigne un joueur. Si ce joueur n'est pas un Paria, il meurt. Si ce personnage est un Paria et qu'il n'y a qu'un seul Fang gu en jeu, le Fang Gu meurt à la place du joueur désigné. Le joueur désigné devient un Fang Gu et rejoint l'équipe des Mauvais. Réveillez le nouveau Fang Gu. Indiquez-lui son nouveau rôle.",
     "reminders": [
       "Mort",
       "Démon",
@@ -1159,7 +1159,7 @@
       "Épuisé"
     ],
     "setup": true,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. Le 1er Étranger tué ainsi devient un mauvais Fang Gu et vous mourez à sa place. [+1 Étranger]"
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. Le 1er Paria tué ainsi devient un mauvais Fang Gu et vous mourez à sa place. [+1 Paria]"
   },
   {
     "id": "vigormortis",
@@ -1176,7 +1176,7 @@
       "Empoisonné"
     ],
     "setup": true,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. Les Sbires tués par vous gardent leur capacité & empoisonnent 1 voisin Villageois. [-1 Étranger]"
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. Les Sbires tués par vous gardent leur capacité & empoisonnent 1 voisin Villageois. [-1 Paria]"
   },
   {
     "id": "nodashii",
@@ -1382,12 +1382,12 @@
     "otherNightReminder": "Choisissez un type de personnage différent de la nuit précédente. Indiquez à l'Aéronaute un joueur dont le personnage est de ce type. Marquez ce type de personnage comme vu par l'Aéronaute, et retirez le précédent marqueur.",
     "reminders": [
       "Villageois vu",
-      "Étranger vu",
+      "Paria vu",
       "Sbire vu",
       "Démon vu"
     ],
     "setup": true,
-    "ability": "Chaque nuit, vous apprenez un joueur qui a un type de rôle différent de celui de la nuit précédente. [+0 ou +1 Étranger]"
+    "ability": "Chaque nuit, vous apprenez un joueur qui a un type de rôle différent de celui de la nuit précédente. [+0 ou +1 Paria]"
   },
   {
     "id": "cultleader",
@@ -2043,9 +2043,9 @@
     "edition": "",
     "team": "minion",
     "firstNight": 26,
-    "firstNightReminder": "Marquez le Xaan 'Nuit 1'. Si la partie a commencé avec 1 Étranger, marquez tous les Villageois 'X' : ils sont empoisonnés.",
+    "firstNightReminder": "Marquez le Xaan 'Nuit 1'. Si la partie a commencé avec 1 Paria, marquez tous les Villageois 'X' : ils sont empoisonnés.",
     "otherNight": 9,
-    "otherNightReminder": "Si les Villageois étaient empoisonnés, retirez les marqueurs 'X'. Sinon, modifiez le marqueur devant le Xaan ; puis, si la nuit correspond au nombre d'Étrangers en début de partie, marquez tous les Villageois 'X' : ils sont empoisonnés.",
+    "otherNightReminder": "Si les Villageois étaient empoisonnés, retirez les marqueurs 'X'. Sinon, modifiez le marqueur devant le Xaan ; puis, si la nuit correspond au nombre d'Parias en début de partie, marquez tous les Villageois 'X' : ils sont empoisonnés.",
     "reminders": [
       "Nuit 1",
       "Nuit 2",
@@ -2054,7 +2054,7 @@
       "X"
     ],
     "setup": true,
-    "ability": "La nuit X, tous les Villageois sont empoisonnés jusqu'à la tombée de la nuit. [X Étrangers]"
+    "ability": "La nuit X, tous les Villageois sont empoisonnés jusqu'à la tombée de la nuit. [X Parias]"
   },
   {
     "id": "boffin",
@@ -2206,7 +2206,7 @@
       "Mort"
     ],
     "setup": true,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. [Vous choisissez quels joueurs sont quels Sbires. -? à +? Étrangers]"
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. [Vous choisissez quels joueurs sont quels Sbires. -? à +? Parias]"
   },
   {
     "id": "ojo",
@@ -2236,7 +2236,7 @@
       "Mort"
     ],
     "setup": true,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. [Les joueurs mauvais sont en ligne, avec vous au milieu. +1 Sbire. -? à +? Étrangers]"
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. [Les joueurs mauvais sont en ligne, avec vous au milieu. +1 Sbire. -? à +? Parias]"
   },
   {
     "id": "gangster",
