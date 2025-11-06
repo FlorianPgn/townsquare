@@ -57,6 +57,10 @@
         <font-awesome-icon icon="file-pdf" />
         Export Tokens
       </div>
+      <div class="button" @click="exportRoleDetails">
+        <font-awesome-icon icon="book" />
+        Export Role Guide
+      </div>
     </div>
   </Modal>
 </template>
@@ -170,6 +174,200 @@ const assignRoles = () => {
       }
     });
     store.commit("toggleModal", "roles");
+  }
+};
+
+const exportRoleDetails = () => {
+  // Get selected roles
+  const selectedRoles = Object.values(roleSelection.value)
+    .flatMap(roles => 
+      roles.filter(role => role.selected)
+        .flatMap(role => Array(role.selected > 0 ? 1 : 0).fill(role)) // Only take one copy of each selected role
+    );
+
+  // Create HTML content
+  const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Role Guide</title>
+        <style>
+          @font-face {
+            font-family: "Papyrus";
+            src: url("${papyrusUrl}") format("truetype");
+          }
+          body { 
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+          }
+          .team-section {
+            margin-bottom: 20px;
+          }
+          .team-header {
+            font-family: "Papyrus", serif;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+          }
+          .team-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 10px;
+          }
+          .role-card {
+            display: flex;
+            gap: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
+          .role-icon {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: url("${tokenBgUrl}") center center;
+            background-size: 100%;
+            position: relative;
+            overflow: hidden;
+          }
+          .icon {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+          }
+          .role-info {
+            flex-grow: 1;
+          }
+          .role-name {
+            font-family: "Papyrus", serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+          }
+          .role-team {
+            font-style: italic;
+            margin-bottom: 10px;
+          }
+          .role-ability {
+            margin-bottom: 10px;
+          }
+          .role-reminders {
+            font-size: 0.9em;
+            color: #666;
+          }
+          .townsfolk { background-color: #e3f2fd; }
+          .outsider { background-color: #e3f2fd; }
+          .minion { background-color: #fce4ec; }
+          .demon { background-color: #ffebee; }
+          @media print {
+            @page { margin: 2cm; }
+            .role-card {
+              break-inside: avoid;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <h1 style="text-align: center; font-family: Papyrus, serif; margin-bottom: 0px; font-size: 30px">${store.state.edition.name || 'Custom Script'}</h1>
+        
+        <!-- Villagers Section -->
+        <div class="team-section">
+          <div class="team-header">Villageois</div>
+          <div class="team-content">
+            ${selectedRoles.filter(role => role.team === 'townsfolk').map(role => `
+              <div class="role-card townsfolk">
+                <div class="role-icon">
+                  <span class="icon" style="background-image: url('${getRoleImageUrl(role)}')"></span>
+                </div>
+                <div class="role-info">
+                  <div class="role-name">${role.name}</div>
+                  <div class="role-ability">${role.ability || 'No ability description available.'}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Outsiders Section -->
+        <div class="team-section">
+          <div class="team-header">Parias</div>
+          <div class="team-content">
+            ${selectedRoles.filter(role => role.team === 'outsider').map(role => `
+              <div class="role-card outsider">
+                <div class="role-icon">
+                  <span class="icon" style="background-image: url('${getRoleImageUrl(role)}')"></span>
+                </div>
+                <div class="role-info">
+                  <div class="role-name">${role.name}</div>
+                  <div class="role-ability">${role.ability || 'No ability description available.'}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Sbires Section -->
+        <div class="team-section">
+          <div class="team-header">Sbires</div>
+          <div class="team-content">
+            ${selectedRoles.filter(role => role.team === 'minion').map(role => `
+              <div class="role-card minion">
+                <div class="role-icon">
+                  <span class="icon" style="background-image: url('${getRoleImageUrl(role)}')"></span>
+                </div>
+                <div class="role-info">
+                  <div class="role-name">${role.name}</div>
+                  <div class="role-ability">${role.ability || 'No ability description available.'}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Demons Section -->
+        <div class="team-section">
+          <div class="team-header">Démons</div>
+          <div class="team-content">
+            ${selectedRoles.filter(role => role.team === 'demon').map(role => `
+              <div class="role-card demon">
+                <div class="role-icon">
+                  <span class="icon" style="background-image: url('${getRoleImageUrl(role)}')"></span>
+                </div>
+                <div class="role-info">
+                  <div class="role-name">${role.name}</div>
+                  <div class="role-ability">${role.ability || 'No ability description available.'}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </body>
+    </html>
+  `;
+
+  // Create blob and object URL
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const url = URL.createObjectURL(blob);
+
+  // Open in new tab
+  const newTab = window.open(url, '_blank');
+
+  // Clean up the object URL after the new tab is loaded
+  if (newTab) {
+    newTab.onload = () => {
+      URL.revokeObjectURL(url);
+    };
   }
 };
 

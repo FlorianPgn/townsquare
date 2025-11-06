@@ -229,7 +229,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Il se peut que vous apparaissiez comme mauvais (Sbire ou Démon), même après votre mort."
+    "ability": "Il se peut que vous apparaissiez comme Mauvais (Sbire ou Démon), même après votre mort."
   },
   {
     "id": "saint",
@@ -270,7 +270,7 @@
     "otherNightReminder": "Montrez votre grimoire à l'Espion aussi longtemps qu'il en a besoin.",
     "reminders": [],
     "setup": false,
-    "ability": "Chaque nuit, vous voyez le Grimoire. Il se peut que vous apparaissiez comme bon (Villageois ou Paria), même après votre mort."
+    "ability": "Chaque nuit, vous voyez le Grimoire. Il se peut que vous apparaissiez comme Bon (Villageois ou Paria), même après votre mort."
   },
   {
     "id": "scarletwoman",
@@ -398,7 +398,7 @@
       "Petit-fils"
     ],
     "setup": false,
-    "ability": "Vous commencez la partie en connaissant le personnage d'un joueur bon. Si ce joueur est tué par le Démon, vous mourez aussi."
+    "ability": "Vous commencez la partie en connaissant le personnage d'un joueur Bon. Si ce joueur est tué par le Démon, vous mourez aussi."
   },
   {
     "id": "sailor",
@@ -551,7 +551,7 @@
       "Immortel"
     ],
     "setup": false,
-    "ability": "Si vos voisins vivants sont tous les deux bons, ils ne peuvent pas mourir."
+    "ability": "Si vos voisins vivants sont tous les deux Bons, ils ne peuvent pas mourir."
   },
   {
     "id": "pacifist",
@@ -564,7 +564,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Lorsqu'un joueur bon est exécuté, il se peut qu'il ne meure pas."
+    "ability": "Lorsqu'un joueur Bon est exécuté, il se peut qu'il ne meure pas."
   },
   {
     "id": "fool",
@@ -604,12 +604,12 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 63,
-    "otherNightReminder": "Si l'Enfant de la lune a désigné un joueur et que ce joueur est bon, le joueur désigné meurt.",
+    "otherNightReminder": "Si l'Enfant de la lune a désigné un joueur et que ce joueur est Bon, le joueur désigné meurt.",
     "reminders": [
       "Mort"
     ],
     "setup": false,
-    "ability": "Quand vous apprenez votre mort, désignez publiquement un joueur encore en vie. Cette nuit, s'il était bon, il meurt."
+    "ability": "Quand vous apprenez votre mort, désignez publiquement un joueur encore en vie. Cette nuit, s'il était Bon, il meurt."
   },
   {
     "id": "goon",
@@ -632,7 +632,7 @@
     "edition": "bmr",
     "team": "outsider",
     "firstNight": 16,
-    "firstNightReminder": "S'il y a 7 joueurs ou plus, indiquez à l'Aliéné un nombre de rôles de Sbires correspondant au nombre de Sbires en jeu et des joueurs pour chacuns de ces personnages. Montrez 3 jetons de personnages bons de votre choix. Si le faux personnage de Démon assigné à l'Aliéné a des actions de nuit, prétendez que vous lui faites réaliser ces actions. Placez le(s) marqueur(s) d'attaque de l'Aliéné. Réveillez le vrai Démon. Dévoilez au Démon les véritables Sbires et 3 bons personnages qui ne sont pas en jeu. Dévoilez au Démon qui est l'Aliéné. Si l'Aliéné a attaqué des joueurs, dévoilez au véritable Démon les joueurs marqués puis retirez les marqueurs de l'Aliéné.",
+    "firstNightReminder": "S'il y a 7 joueurs ou plus, indiquez à l'Aliéné un nombre de rôles de Sbires correspondant au nombre de Sbires en jeu et des joueurs pour chacuns de ces personnages. Montrez 3 jetons de personnages Bons de votre choix. Si le faux personnage de Démon assigné à l'Aliéné a des actions de nuit, prétendez que vous lui faites réaliser ces actions. Placez le(s) marqueur(s) d'attaque de l'Aliéné. Réveillez le vrai Démon. Dévoilez au Démon les véritables Sbires et 3 Bons personnages qui ne sont pas en jeu. Dévoilez au Démon qui est l'Aliéné. Si l'Aliéné a attaqué des joueurs, dévoilez au véritable Démon les joueurs marqués puis retirez les marqueurs de l'Aliéné.",
     "otherNight": 28,
     "otherNightReminder": "Permettez à l'Aliéné de réaliser les actions du Démon qu'il croit être. Placez le(s) marqueur(s) d'attaque. Si l'Aliéné a indiqué des joueurs, réveillez le Démon. Dévoilez au Démon les marqueurs de l'Aliéné puis retirez-les.",
     "reminders": [],
@@ -779,7 +779,7 @@
       "Apprenti"
     ],
     "setup": false,
-    "ability": "Au cours de votre première nuit, vous acquérez une capacité de villageois si vous êtes bon, ou une capacité de Sbire si vous êtes Mauvais."
+    "ability": "Au cours de votre première nuit, vous acquérez une capacité de villageois si vous êtes Bon, ou une capacité de Sbire si vous êtes Mauvais."
   },
   {
     "id": "matron",
@@ -819,8 +819,8 @@
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [
-      "Accuser bon",
-      "Accuser mauvais"
+      "Accuser Bon",
+      "Accuser Mauvais"
     ],
     "setup": false,
     "ability": "Seul le Narrateur peut lancer des accusations. Chaque jour, au moins un de vos adversaires est accusé."
@@ -862,7 +862,7 @@
     "otherNightReminder": "Le Rêveur désigne un joueur. Indiquez lui un personnage Bon et un personnage Mauvais. L'un de ces deux personnages est ce joueur.",
     "reminders": [],
     "setup": false,
-    "ability": "Chaque nuit, désignez un joueur (ni vous-même, ni un Voyageur) : vous apprenez un personnage bon et un mauvais, l'un d'eux étant le sien."
+    "ability": "Chaque nuit, désignez un joueur (ni vous-même, ni un Voyageur) : vous apprenez un personnage Bon et un Mauvais, l'un d'eux étant le sien."
   },
   {
     "id": "snakecharmer",
@@ -982,7 +982,7 @@
       "Épuisé"
     ],
     "setup": false,
-    "ability": "Une fois par partie, la nuit, désignez un personnage bon : vous gagnez sa capacité. Si ce personnage est en jeu, il est ivre."
+    "ability": "Une fois par partie, la nuit, désignez un personnage Bon : vous gagnez sa capacité. Si ce personnage est en jeu, il est ivre."
   },
   {
     "id": "artist",
@@ -1098,7 +1098,7 @@
       "Jumeau"
     ],
     "setup": false,
-    "ability": "Vous & un adversaire savez vos personnages respectifs. Si le bon est exécuté, les mauvais gagnent. Le bien ne peut gagner si vous 2 vivez."
+    "ability": "Vous & un adversaire savez vos personnages respectifs. Si le Bon est exécuté, les Mauvais gagnent. Le bien ne peut gagner si vous 2 vivez."
   },
   {
     "id": "witch",
@@ -1128,7 +1128,7 @@
       "Persuadé"
     ],
     "setup": false,
-    "ability": "Chaque nuit, désignez un joueur et un personnage bon : il sera persuadé d'être ce personnage demain, ou il se peut qu'il soit exécuté."
+    "ability": "Chaque nuit, désignez un joueur et un personnage Bon : il sera persuadé d'être ce personnage demain, ou il se peut qu'il soit exécuté."
   },
   {
     "id": "pithag",
@@ -1159,7 +1159,7 @@
       "Épuisé"
     ],
     "setup": true,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. Le 1er Paria tué ainsi devient un mauvais Fang Gu et vous mourez à sa place. [+1 Paria]"
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. Le 1er Paria tué ainsi devient un Mauvais Fang Gu et vous mourez à sa place. [+1 Paria]"
   },
   {
     "id": "vigormortis",
@@ -1207,7 +1207,7 @@
       "Mort"
     ],
     "setup": false,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. Les capacités de Villageois donnent de fausses infos. Le jour, sans exécution, les mauvais gagnent."
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. Les capacités de Villageois donnent de fausses infos. Le jour, sans exécution, les Mauvais gagnent."
   },
   {
     "id": "barista",
@@ -1400,7 +1400,7 @@
     "otherNightReminder": "Si le Gourou change d'équipe, réveillez-le pour l'en informer.",
     "reminders": [],
     "setup": false,
-    "ability": "Chaque nuit, vous rejoignez l'équipe de l'un de vos voisins vivants. Si tous les bons joueurs choisissent de rejoindre votre secte, votre équipe gagne."
+    "ability": "Chaque nuit, vous rejoignez l'équipe de l'un de vos voisins vivants. Si tous les Bons joueurs choisissent de rejoindre votre secte, votre équipe gagne."
   },
   {
     "id": "lycanthrope",
@@ -1410,13 +1410,13 @@
     "firstNight": 0,
     "firstNightReminder": "",
     "otherNight": 30,
-    "otherNightReminder": "Le Lycanthrope désigne un joueur vivant : s'il est bon, il meurt, et personne ne pourra être tué par le Démon cette nuit.",
+    "otherNightReminder": "Le Lycanthrope désigne un joueur vivant : s'il est Bon, il meurt, et personne ne pourra être tué par le Démon cette nuit.",
     "reminders": [
       "Piège à loup",
       "Mort"
     ],
     "setup": false,
-    "ability": "Chaque nuit*, désignez un joueur vivant : s'il est bon, il meurt et le Démon ne tue pas cette nuit. Un joueur bon apparaît comme mauvais."
+    "ability": "Chaque nuit*, désignez un joueur vivant : s'il est Bon, il meurt et le Démon ne tue pas cette nuit. Un joueur Bon apparaît comme Mauvais."
   },
   {
     "id": "amnesiac",
@@ -1521,7 +1521,7 @@
     "otherNightReminder": "Si le Fermier est mort aujourd'hui, réveillez un villageois et indiquez-lui qu'il est devenu le Fermier.",
     "reminders": [],
     "setup": false,
-    "ability": "Quand vous mourez la nuit, un bon joueur vivant devient Fermier."
+    "ability": "Quand vous mourez la nuit, un Bon joueur vivant devient Fermier."
   },
   {
     "id": "magician",
@@ -1576,7 +1576,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": true,
-    "ability": "Le Narrateur peut briser les règles du jeu. Si les joueurs exécutent le Narrateur, les bons remportent la partie, même si vous êtes mort. [Aucun joueur n'est Mauvais]"
+    "ability": "Le Narrateur peut briser les règles du jeu. Si les joueurs exécutent le Narrateur, les Bons remportent la partie, même si vous êtes mort. [Aucun joueur n'est Mauvais]"
   },
   {
     "id": "cannibal",
@@ -1600,14 +1600,14 @@
     "edition": "",
     "team": "townsfolk",
     "firstNight": 56,
-    "firstNightReminder": "Désignez un joueur bon à l'Intendant.",
+    "firstNightReminder": "Désignez un joueur Bon à l'Intendant.",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [
       "Connu"
     ],
     "setup": false,
-    "ability": "Vous commencez la partie en connaissant un joueur bon."
+    "ability": "Vous commencez la partie en connaissant un joueur Bon."
   },
   {
     "id": "shugenja",
@@ -1615,12 +1615,12 @@
     "edition": "",
     "team": "townsfolk",
     "firstNight": 60,
-    "firstNightReminder": "Réveillez le Shugenja. Indiquez-lui dans quelle direction se trouve le mauvais le plus proche. En cas d'égalité, lui indiquer n'importe laquelle des deux directions.",
+    "firstNightReminder": "Réveillez le Shugenja. Indiquez-lui dans quelle direction se trouve le Mauvais le plus proche. En cas d'égalité, lui indiquer n'importe laquelle des deux directions.",
     "otherNight": 0,
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Vous commencez la partie en sachant si le mauvais le plus proche est dans le sens horaire ou anti-horaire. Si équidistants, l'info est arbitraire."
+    "ability": "Vous commencez la partie en sachant si le Mauvais le plus proche est dans le sens horaire ou anti-horaire. Si équidistants, l'info est arbitraire."
   },
   {
     "id": "highpriestess",
@@ -1677,7 +1677,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Chaque jour, si vous devinez publiquement quels joueurs sont Sbire(s) et quels joueurs sont Démon(s), les bons gagnent."
+    "ability": "Chaque jour, si vous devinez publiquement quels joueurs sont Sbire(s) et quels joueurs sont Démon(s), les Bons gagnent."
   },
   {
     "id": "acrobat",
@@ -1928,7 +1928,7 @@
       "Épuisé"
     ],
     "setup": false,
-    "ability": "Vous commencez en sachant un mot secret. Le premier joueur bon à prononcer ce mot devient mauvais cette nuit."
+    "ability": "Vous commencez en sachant un mot secret. Le premier joueur Bon à prononcer ce mot devient Mauvais cette nuit."
   },
   {
     "id": "mezepheles",
@@ -1944,7 +1944,7 @@
       "Épuisé"
     ],
     "setup": false,
-    "ability": "Vous commencez en sachant un mot secret. Le premier joueur bon à prononcer ce mot devient mauvais cette nuit."
+    "ability": "Vous commencez en sachant un mot secret. Le premier joueur Bon à prononcer ce mot devient Mauvais cette nuit."
   },
   {
     "id": "marionette",
@@ -1960,7 +1960,7 @@
       "Marionnette"
     ],
     "setup": true,
-    "ability": "Vous croyez être un personnage bon, mais vous ne l'êtes pas. Le Démon sait qui vous êtes. [Le Démon est votre voisin]"
+    "ability": "Vous croyez être un personnage Bon, mais vous ne l'êtes pas. Le Démon sait qui vous êtes. [Le Démon est votre voisin]"
   },
   {
     "id": "boomdandy",
@@ -1997,15 +1997,15 @@
     "edition": "",
     "team": "minion",
     "firstNight": 39,
-    "firstNightReminder": "Réveillez la Harpie. Elle désigne deux joueurs, l'un après l'autre. Réveillez le premier joueur, et lui révéler qu'il est persuadé par la Harpie que le deuxième est mauvais.",
+    "firstNightReminder": "Réveillez la Harpie. Elle désigne deux joueurs, l'un après l'autre. Réveillez le premier joueur, et lui révéler qu'il est persuadé par la Harpie que le deuxième est Mauvais.",
     "otherNight": 24,
-    "otherNightReminder": "Réveillez la Harpie. Elle désigne deux joueurs, l'un après l'autre. Réveillez le premier joueur, et lui révéler qu'il est persuadé par la Harpie que le deuxième est mauvais.",
+    "otherNightReminder": "Réveillez la Harpie. Elle désigne deux joueurs, l'un après l'autre. Réveillez le premier joueur, et lui révéler qu'il est persuadé par la Harpie que le deuxième est Mauvais.",
     "reminders": [
       "Persuadé",
       "2e"
     ],
     "setup": false,
-    "ability": "Chaque nuit, désignez deux joueurs : demain, le premier sera persuadé que le second est mauvais, ou il se peut que l'un ou les deux meurent."
+    "ability": "Chaque nuit, désignez deux joueurs : demain, le premier sera persuadé que le second est Mauvais, ou il se peut que l'un ou les deux meurent."
   },
   {
     "id": "summoner",
@@ -2013,7 +2013,7 @@
     "edition": "",
     "team": "minion",
     "firstNight": 17,
-    "firstNightReminder": "Réveillez l'Invocateur, et indiquez-lui trois rôles bons qui ne sont pas en jeu.",
+    "firstNightReminder": "Réveillez l'Invocateur, et indiquez-lui trois rôles Bons qui ne sont pas en jeu.",
     "otherNight": 27,
     "otherNightReminder": "S'il s'agit de la 3e nuit, réveillez l'Invocateur. Il chosit un joueur et un Démon : ce joueur devient ce Démon.",
     "reminders": [
@@ -2022,7 +2022,7 @@
       "Nuit 3"
     ],
     "setup": true,
-    "ability": "Vous avez trois bluffs. Durant la troisième nuit, désignez un joueur : il devient le mauvais Démon de votre choix. [Aucun Démon]"
+    "ability": "Vous avez trois bluffs. Durant la troisième nuit, désignez un joueur : il devient le Mauvais Démon de votre choix. [Aucun Démon]"
   },
   {
     "id": "vizier",
@@ -2035,7 +2035,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Tous les joueurs savent que vous êtes le Vizir. Vous ne pouvez mourir de jour. Si un bon vote, vous pouvez choisir d'exécuter immédiatement."
+    "ability": "Tous les joueurs savent que vous êtes le Vizir. Vous ne pouvez mourir de jour. Si un Bon vote, vous pouvez choisir d'exécuter immédiatement."
   },
   {
     "id": "xaan",
@@ -2067,7 +2067,7 @@
     "otherNightReminder": "",
     "reminders": [],
     "setup": false,
-    "ability": "Le Démon (même si ivre ou empoisonné) a la capacité d'un personnage bon qui n'est pas en jeu. Vous savez tous les deux laquelle."
+    "ability": "Le Démon (même si ivre ou empoisonné) a la capacité d'un personnage Bon qui n'est pas en jeu. Vous savez tous les deux laquelle."
   },
   {
     "id": "lilmonsta",
@@ -2136,7 +2136,7 @@
     ],
     "setup": true,
     "multiple": true,
-    "ability": "Chaque nuit*, il se peut qu'un joueur meure. Les exécutions ratent sans vote de bon. Vous apparaissez aussi comme Sbire. [Majorité de Légion]"
+    "ability": "Chaque nuit*, il se peut qu'un joueur meure. Les exécutions ratent sans vote de Bon. Vous apparaissez aussi comme Sbire. [Majorité de Légion]"
   },
   {
     "id": "leviathan",
@@ -2229,14 +2229,14 @@
     "edition": "",
     "team": "demon",
     "firstNight": 4,
-    "firstNightReminder": "Réveiller le bon nombre de joueurs des deux côtés du Maître de Typhon. Leur révéler leur rôle de Sbire.",
+    "firstNightReminder": "Réveiller le Bon nombre de joueurs des deux côtés du Maître de Typhon. Leur révéler leur rôle de Sbire.",
     "otherNight": 41,
     "otherNightReminder": "Le Maître de Typhon désigne un joueur : ce joueur meurt.",
     "reminders": [
       "Mort"
     ],
     "setup": true,
-    "ability": "Chaque nuit*, désignez un joueur : il meurt. [Les joueurs mauvais sont en ligne, avec vous au milieu. +1 Sbire. -? à +? Parias]"
+    "ability": "Chaque nuit*, désignez un joueur : il meurt. [Les joueurs Mauvais sont en ligne, avec vous au milieu. +1 Sbire. -? à +? Parias]"
   },
   {
     "id": "gangster",
