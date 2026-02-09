@@ -93,13 +93,6 @@
 
       <transition name="fold">
         <ul class="menu" v-if="isMenuOpen">
-          <li @click="changePronouns" v-if="
-            !session.isSpectator ||
-            (session.isSpectator && props.player.id === session.playerId)
-          ">
-            <font-awesome-icon icon="venus-mars" class="fa fa-venus-mars" />
-            {{ locale.player.changePronouns }}
-          </li>
           <template v-if="!session.isSpectator">
             <li @click="changeName">
               <font-awesome-icon icon="user-edit" class="fa fa-user-edit" />
@@ -121,18 +114,6 @@
               <font-awesome-icon icon="chair" class="fa fa-chair" />
               {{ locale.player.emptySeat }}
             </li>
-            <template v-if="!session.nomination">
-              <li @click="nominatePlayer()">
-                <font-awesome-icon icon="hand-point-right" class="fa fa-hand-point-right" />
-                {{ locale.player.nomination }}
-              </li>
-            </template>
-            <template v-if="!session.nomination">
-              <li @click="specialVote()">
-                <font-awesome-icon icon="vote-yea" class="fa fa-vote-yea" />
-                {{ locale.player.specialVote }}
-              </li>
-            </template>
           </template>
           <li @click="claimSeat" v-if="session.isSpectator"
             :class="{ disabled: props.player.id && props.player.id !== session.playerId }">
