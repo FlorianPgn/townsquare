@@ -103,7 +103,9 @@
       "rotateClockwise": "Rotate clockwise",
       "rotateCounter": "Rotate counterclockwise",
       "shuffleRandom": "Shuffle randomly",
-      "shuffleSmart": "Shuffle (new neighbors)"
+      "shuffleSmart": "Shuffle (new neighbors)",
+      "clearNotes": "Clear notes",
+      "clearBluffs": "Clear bluffs"
     },
     "timer": {
       "default": {

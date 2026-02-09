@@ -103,7 +103,9 @@
       "rotateClockwise": "Tourner sens horaire",
       "rotateCounter": "Tourner sens antihoraire",
       "shuffleRandom": "Melanger aleatoirement",
-      "shuffleSmart": "Melanger (nouveaux voisins)"
+      "shuffleSmart": "Melanger (nouveaux voisins)",
+      "clearNotes": "Effacer les notes",
+      "clearBluffs": "Effacer les bluffs"
     },
     "timer": {
       "default": {

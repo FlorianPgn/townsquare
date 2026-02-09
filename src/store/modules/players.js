@@ -79,6 +79,13 @@ const actions = {
       .map((a) => a[1]);
     commit("set", players);
   },
+  clearReminders({ state, commit }) {
+    state.players.forEach((player) => {
+      if (player.reminders.length) {
+        commit("update", { player, property: "reminders", value: [] });
+      }
+    });
+  },
   smartShuffle({ state, commit }) {
     const players = state.players;
     if (players.length < 3) return;

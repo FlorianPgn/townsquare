@@ -110,6 +110,16 @@
           {{ locale.townsquare.setup.shuffleSmart }}
         </div>
       </div>
+      <div class="button-group">
+        <div @click="clearNotes" class="button" :class="{ disabled: session.nomination }">
+          {{ locale.townsquare.setup.clearNotes }}
+        </div>
+      </div>
+      <div class="button-group">
+        <div @click="clearBluffs" class="button" :class="{ disabled: session.nomination }">
+          {{ locale.townsquare.setup.clearBluffs }}
+        </div>
+      </div>
     </div>
 
     <div class="fabled" :class="{ closed: !isFabledOpen }" v-if="fabled.length">
@@ -233,6 +243,16 @@ export default {
       } else {
         this.$store.dispatch("players/randomize");
       }
+    },
+    clearNotes() {
+      if (this.session.isSpectator || !this.players.length) return;
+      if (this.session.nomination) return;
+      this.$store.dispatch("players/clearReminders");
+    },
+    clearBluffs() {
+      if (this.session.isSpectator || !this.players.length) return;
+      if (this.session.nomination) return;
+      this.$store.commit("players/setBluff");
     },
     removeFabled(index) {
       if (this.session.isSpectator) return;
