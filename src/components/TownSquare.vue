@@ -87,6 +87,31 @@
       </div>
     </div>
 
+    <div class="placement" v-if="!session.isSpectator && players.length" ref="placement"
+      :class="{ closed: !isPlacementOpen }">
+      <h3>
+        <span>{{ locale.townsquare.placement.title }}</span>
+        <font-awesome-icon icon="times-circle" class="fa fa-times-circle" @click.stop="togglePlacement" />
+        <font-awesome-icon icon="plus-circle" class="fa fa-plus-circle" @click.stop="togglePlacement" />
+      </h3>
+      <div class="button-group">
+        <div @click="rotatePlayers('counter')" class="button" :class="{ disabled: session.nomination }">
+          {{ locale.townsquare.placement.rotateCounter }}
+        </div>
+        <div @click="rotatePlayers('clockwise')" class="button" :class="{ disabled: session.nomination }">
+          {{ locale.townsquare.placement.rotateClockwise }}
+        </div>
+      </div>
+      <div class="button-group">
+        <div @click="shufflePlayers('random')" class="button" :class="{ disabled: session.nomination }">
+          {{ locale.townsquare.placement.shuffleRandom }}
+        </div>
+        <div @click="shufflePlayers('smart')" class="button" :class="{ disabled: session.nomination }">
+          {{ locale.townsquare.placement.shuffleSmart }}
+        </div>
+      </div>
+    </div>
+
     <div class="fabled" :class="{ closed: !isFabledOpen }" v-if="fabled.length">
       <h3>
         <span>{{ locale.townsquare.fabled }}</span>
@@ -154,6 +179,7 @@ export default {
       isBluffsOpen: true,
       isFabledOpen: true,
       isTimeControlsOpen: false,
+      isPlacementOpen: false,
       timerName: "Timer",
       timerDuration: 1,
       timerOn: false,
@@ -169,6 +195,44 @@ export default {
     },
     toggleTimeControls() {
       this.isTimeControlsOpen = !this.isTimeControlsOpen;
+    },
+    togglePlacement() {
+      this.isPlacementOpen = !this.isPlacementOpen;
+    },
+    rotatePlayers(direction) {
+      if (this.session.isSpectator || !this.players.length) return;
+      if (this.session.nomination) return;
+      const count = this.players.length;
+      const steps = direction === "clockwise" ? 1 : -1;
+
+      const rotateIndex = (index) => {
+        if (typeof index !== "number" || index < 0) return index;
+        return (index + steps + count) % count;
+      };
+
+      if (this.session.markedPlayer >= 0) {
+        this.$store.commit(
+          "session/setMarkedPlayer",
+          rotateIndex(this.session.markedPlayer),
+        );
+      }
+      if (this.session.playerForSpecialVote >= 0) {
+        this.$store.commit(
+          "session/setPlayerForSpecialVote",
+          rotateIndex(this.session.playerForSpecialVote),
+        );
+      }
+
+      this.$store.commit("players/rotate", steps);
+    },
+    shufflePlayers(mode) {
+      if (this.session.isSpectator || !this.players.length) return;
+      if (this.session.nomination) return;
+      if (mode === "smart") {
+        this.$store.dispatch("players/smartShuffle");
+      } else {
+        this.$store.dispatch("players/randomize");
+      }
     },
     removeFabled(index) {
       if (this.session.isSpectator) return;
@@ -576,7 +640,8 @@ export default {
 /***** Demon bluffs / Fabled *******/
 #townsquare>.bluffs,
 #townsquare>.fabled,
-#townsquare>.storytelling {
+#townsquare>.storytelling,
+#townsquare>.placement {
   position: absolute;
   left: 10px;
 
@@ -592,6 +657,13 @@ export default {
     bottom: 10px;
     left: auto;
     right: 10px;
+    width: min-content;
+  }
+
+  &.placement {
+    top: 10px;
+    left: 10px;
+    right: auto;
     width: min-content;
   }
 

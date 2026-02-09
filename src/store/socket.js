@@ -168,6 +168,10 @@ class LiveSession {
         if (!this._isSpectator) return;
         this._store.commit("players/remove", params);
         break;
+      case "rotate":
+        if (!this._isSpectator) return;
+        this._store.commit("players/rotate", params);
+        break;
       case "marked":
         if (!this._isSpectator) return;
         this._store.commit("session/setMarkedPlayer", params);
@@ -885,6 +889,15 @@ class LiveSession {
   }
 
   /**
+   * Rotate all player seats. ST only
+   * @param payload rotation steps (clockwise positive)
+   */
+  rotatePlayers(payload) {
+    if (this._isSpectator) return;
+    this._send("rotate", payload);
+  }
+
+  /**
    * Remove a player. ST only
    * @param payload
    */
@@ -965,6 +978,9 @@ export default (store) => {
         break;
       case "players/move":
         session.movePlayer(payload);
+        break;
+      case "players/rotate":
+        session.rotatePlayers(payload);
         break;
       case "players/remove":
         session.removePlayer(payload);

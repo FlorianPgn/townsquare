@@ -98,6 +98,13 @@
     "bluffs": "Bluffs de Démon",
     "fabled": "Fabuleux",
     "storytellerTools": "Narration",
+    "placement": {
+      "title": "Placement",
+      "rotateClockwise": "Tourner sens horaire",
+      "rotateCounter": "Tourner sens antihoraire",
+      "shuffleRandom": "Melanger aleatoirement",
+      "shuffleSmart": "Melanger (nouveaux voisins)"
+    },
     "timer": {
       "default": {
         "text": "Compte à rebours"

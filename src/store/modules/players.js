@@ -79,6 +79,52 @@ const actions = {
       .map((a) => a[1]);
     commit("set", players);
   },
+  smartShuffle({ state, commit }) {
+    const players = state.players;
+    if (players.length < 3) return;
+    const original = players.slice();
+    const count = original.length;
+    const originalNeighbors = new Map();
+
+    for (let i = 0; i < count; i++) {
+      const left = original[(i - 1 + count) % count];
+      const right = original[(i + 1) % count];
+      originalNeighbors.set(original[i], new Set([left, right]));
+    }
+
+    const scoreArrangement = (arrangement) => {
+      let score = 0;
+      for (let i = 0; i < count; i++) {
+        const player = arrangement[i];
+        const left = arrangement[(i - 1 + count) % count];
+        const right = arrangement[(i + 1) % count];
+        const neighbors = originalNeighbors.get(player);
+        if (neighbors.has(left)) score++;
+        if (neighbors.has(right)) score++;
+      }
+      return score;
+    };
+
+    const shuffle = (arr) =>
+      arr
+        .map((a) => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map((a) => a[1]);
+
+    // Try multiple random shuffles and pick the one with fewest shared neighbors.
+    let best = shuffle(original);
+    let bestScore = scoreArrangement(best);
+    for (let i = 0; i < 200 && bestScore > 0; i++) {
+      const candidate = shuffle(original);
+      const candidateScore = scoreArrangement(candidate);
+      if (candidateScore < bestScore) {
+        best = candidate;
+        bestScore = candidateScore;
+      }
+    }
+
+    commit("set", best);
+  },
   clearRoles({ state, commit, rootState }) {
     let players;
     if (rootState.session.isSpectator) {
@@ -144,6 +190,15 @@ const mutations = {
   },
   move(state, [from, to]) {
     state.players.splice(to, 0, state.players.splice(from, 1)[0]);
+  },
+  rotate(state, steps = 1) {
+    const count = state.players.length;
+    if (!count) return;
+    const normalized = ((steps % count) + count) % count;
+    if (!normalized) return;
+    state.players = state.players
+      .slice(count - normalized)
+      .concat(state.players.slice(0, count - normalized));
   },
   setBluff(state, { index, role } = {}) {
     if (index !== undefined) {
