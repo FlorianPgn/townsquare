@@ -88,6 +88,9 @@ function keyup({ key, ctrlKey, metaKey }) {
       store.commit("toggleModal", "reference");
       break;
     case "n":
+      store.commit("toggleNightReminderMode");
+      break;
+    case "o":
       store.commit("toggleModal", "nightOrder");
       break;
     case "e":

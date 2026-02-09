@@ -5,7 +5,8 @@
     vote: session.nomination,
   }">
     <ul class="circle" :class="['size-' + players.length]">
-      <Player v-for="(player, index) in players" :key="index" :player="player" @trigger="handleTrigger(index, $event)"
+      <Player v-for="(player, index) in players" :key="index" :player="player"
+        :night-reminder-mode="grimoire.nightReminderMode" @trigger="handleTrigger(index, $event)"
         :class="{
           from: Math.max(swap, move, nominate) === index,
           swap: swap > -1,
@@ -129,8 +130,10 @@
         <font-awesome-icon icon="plus-circle" class="fa fa-plus-circle" @click.stop="toggleFabled" />
       </h3>
       <ul>
-        <li v-for="(role, index) in fabled" :key="index" @click="removeFabled(index)">
+        <li v-for="(role, index) in fabled" :key="index" @click="removeFabled(index)"
+          :class="{ 'dim-night': shouldDimRole(role) }">
           <div class="night-order first" v-if="
+            grimoire.nightReminderMode === 'first' &&
             nightOrder.get(role).first &&
             (grimoire.isNightOrder || !session.isSpectator)
           ">
@@ -138,6 +141,7 @@
             <span v-if="role.firstNightReminder">{{ role.firstNightReminder }}</span>
           </div>
           <div class="night-order other" v-if="
+            grimoire.nightReminderMode === 'other' &&
             nightOrder.get(role).other &&
             (grimoire.isNightOrder || !session.isSpectator)
           ">
@@ -486,6 +490,13 @@ export default {
         this.timerDuration = newDuration;
       }
     },
+    shouldDimRole(role) {
+      if (!this.grimoire.isNight) return false;
+      const order = this.nightOrder.get(role);
+      if (!order) return true;
+      if (this.grimoire.nightReminderMode === "first") return !order.first;
+      return !order.other;
+    },
     startTimer() {
       let timer = { name: this.timerName, duration: this.timerDuration * 60 };
       this.$store.commit("setTimer", timer);
@@ -767,7 +778,6 @@ export default {
       font-size: 1.1em;
     }
   }
-
   &.closed {
     svg.fa-times-circle {
       display: none;
@@ -811,6 +821,10 @@ export default {
   transition: opacity 250ms;
   background-image: url("../assets/icons/x.png");
   z-index: 2;
+}
+
+.fabled ul li.dim-night .token {
+  filter: brightness(0.65) saturate(0.8);
 }
 
 /**** Night reminders ****/

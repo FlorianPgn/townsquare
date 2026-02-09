@@ -8,6 +8,7 @@
         you: session.sessionId && props.player.id && props.player.id === session.playerId,
         'vote-yes': session.votes[index],
         'vote-lock': voteLocked,
+        'dim-night': shouldDimForNight,
       },
       props.player.role.team,
     ]">
@@ -15,6 +16,7 @@
       <div class="life" @click="toggleStatus()"></div>
 
       <div class="night-order first" v-if="
+        props.nightReminderMode === 'first' &&
         nightOrder.get(props.player).first &&
         (grimoire.isNightOrder || !session.isSpectator)
       ">
@@ -24,6 +26,7 @@
         </span>
       </div>
       <div class="night-order other" v-if="
+        props.nightReminderMode === 'other' &&
         nightOrder.get(props.player).other &&
         (grimoire.isNightOrder || !session.isSpectator)
       ">
@@ -159,6 +162,10 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  nightReminderMode: {
+    type: String,
+    default: "first",
+  },
 });
 
 const emit = defineEmits(['update-player', 'trigger']);
@@ -183,6 +190,14 @@ const voteLocked = computed(() => {
         : session.value.nomination[0])) %
     playersCount;
   return indexAdjusted < session.value.lockedVote - 1;
+});
+
+const shouldDimForNight = computed(() => {
+  if (!grimoire.value.isNight) return false;
+  const order = nightOrder.value.get(props.player);
+  if (!order) return true;
+  if (props.nightReminderMode === "first") return !order.first;
+  return !order.other;
 });
 
 const zoom = computed(() => {
@@ -469,6 +484,10 @@ function vote() {
   transition: transform 200ms ease-in-out;
   transform: perspective(400px) rotateY(0deg);
   backface-visibility: hidden;
+}
+
+.player.dim-night .token {
+  filter: brightness(0.65) saturate(0.1);
 }
 
 #townsquare.public .circle .token {

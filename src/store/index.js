@@ -109,6 +109,7 @@ const initializeStore = async () => {
         isImageOptIn: false,
         isStreamerMode: false,
         isOrganVoteMode: false,
+        nightReminderMode: "first",
         zoom: 0,
         background: "",
         timer: {
@@ -172,6 +173,10 @@ const initializeStore = async () => {
       toggleMuted: toggle("isMuted"),
       toggleMenu: toggle("isMenuOpen"),
       toggleNightOrder: toggle("isNightOrder"),
+      toggleNightReminderMode({ grimoire }) {
+        grimoire.nightReminderMode =
+          grimoire.nightReminderMode === "first" ? "other" : "first";
+      },
       toggleStatic: toggle("isStatic"),
       toggleNight: toggle("isNight"),
       toggleRinging: toggle("isRinging"),

@@ -59,6 +59,10 @@
               ]" />
             </em>
           </li>
+          <li @click="toggleNightReminderMode" v-if="players.length">
+            Night Reminders: {{ nightReminderModeLabel }}
+            <em>[N]</em>
+          </li>
           <li v-if="players.length">
             {{ locale.menu.grimoire.zoom }}
             <em>
@@ -185,7 +189,7 @@
           </li>
           <li @click="toggleModal('nightOrder')">
             {{ locale.menu.help.nightOrder }}
-            <em>[N]</em>
+            <em>[O]</em>
           </li>
           <li @click="toggleModal('gameState')">
             {{ locale.menu.help.gameState }}
@@ -230,6 +234,10 @@ const locale = computed(() => store.state.locale);
 const players = computed(() => store.state.players.players);
 
 const tab = ref('grimoire');
+
+const nightReminderModeLabel = computed(() =>
+  grimoire.value.nightReminderMode === 'first' ? 'First Night' : 'Other Nights',
+);
 
 const setBackground = () => {
   const background = prompt(locale.value.prompt.background);
@@ -356,6 +364,7 @@ const toggleImageOptIn = () => store.commit('toggleImageOptIn');
 const toggleStreamerMode = () => store.commit('toggleStreamerMode');
 const toggleMuted = () => store.commit('toggleMuted');
 const toggleNightOrder = () => store.commit('toggleNightOrder');
+const toggleNightReminderMode = () => store.commit('toggleNightReminderMode');
 const toggleStatic = () => store.commit('toggleStatic');
 const setZoom = (zoom) => store.commit('setZoom', zoom);
 const toggleModal = (modal) => store.commit('toggleModal', modal);
