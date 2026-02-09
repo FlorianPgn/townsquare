@@ -87,27 +87,27 @@
       </div>
     </div>
 
-    <div class="placement" v-if="!session.isSpectator && players.length" ref="placement"
-      :class="{ closed: !isPlacementOpen }">
+    <div class="setup" v-if="!session.isSpectator && players.length" ref="setup"
+      :class="{ closed: !isSetupOpen }">
       <h3>
-        <span>{{ locale.townsquare.placement.title }}</span>
-        <font-awesome-icon icon="times-circle" class="fa fa-times-circle" @click.stop="togglePlacement" />
-        <font-awesome-icon icon="plus-circle" class="fa fa-plus-circle" @click.stop="togglePlacement" />
+        <span>{{ locale.townsquare.setup.title }}</span>
+        <font-awesome-icon icon="times-circle" class="fa fa-times-circle" @click.stop="toggleSetup" />
+        <font-awesome-icon icon="plus-circle" class="fa fa-plus-circle" @click.stop="toggleSetup" />
       </h3>
       <div class="button-group">
         <div @click="rotatePlayers('counter')" class="button" :class="{ disabled: session.nomination }">
-          {{ locale.townsquare.placement.rotateCounter }}
+          {{ locale.townsquare.setup.rotateCounter }}
         </div>
         <div @click="rotatePlayers('clockwise')" class="button" :class="{ disabled: session.nomination }">
-          {{ locale.townsquare.placement.rotateClockwise }}
+          {{ locale.townsquare.setup.rotateClockwise }}
         </div>
       </div>
       <div class="button-group">
         <div @click="shufflePlayers('random')" class="button" :class="{ disabled: session.nomination }">
-          {{ locale.townsquare.placement.shuffleRandom }}
+          {{ locale.townsquare.setup.shuffleRandom }}
         </div>
         <div @click="shufflePlayers('smart')" class="button" :class="{ disabled: session.nomination }">
-          {{ locale.townsquare.placement.shuffleSmart }}
+          {{ locale.townsquare.setup.shuffleSmart }}
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@ export default {
       isBluffsOpen: true,
       isFabledOpen: true,
       isTimeControlsOpen: false,
-      isPlacementOpen: false,
+      isSetupOpen: false,
       timerName: "Timer",
       timerDuration: 1,
       timerOn: false,
@@ -196,8 +196,8 @@ export default {
     toggleTimeControls() {
       this.isTimeControlsOpen = !this.isTimeControlsOpen;
     },
-    togglePlacement() {
-      this.isPlacementOpen = !this.isPlacementOpen;
+    toggleSetup() {
+      this.isSetupOpen = !this.isSetupOpen;
     },
     rotatePlayers(direction) {
       if (this.session.isSpectator || !this.players.length) return;
@@ -641,7 +641,7 @@ export default {
 #townsquare>.bluffs,
 #townsquare>.fabled,
 #townsquare>.storytelling,
-#townsquare>.placement {
+#townsquare>.setup {
   position: absolute;
   left: 10px;
 
@@ -660,7 +660,7 @@ export default {
     width: min-content;
   }
 
-  &.placement {
+  &.setup {
     top: 10px;
     left: 10px;
     right: auto;

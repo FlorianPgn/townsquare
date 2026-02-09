@@ -98,8 +98,8 @@
     "bluffs": "Demon bluffs",
     "fabled": "Fabled",
     "storytellerTools": "Storytelling",
-    "placement": {
-      "title": "Placement",
+    "setup": {
+      "title": "Setup",
       "rotateClockwise": "Rotate clockwise",
       "rotateCounter": "Rotate counterclockwise",
       "shuffleRandom": "Shuffle randomly",

@@ -98,8 +98,8 @@
     "bluffs": "Bluffs de Démon",
     "fabled": "Fabuleux",
     "storytellerTools": "Narration",
-    "placement": {
-      "title": "Placement",
+    "setup": {
+      "title": "Mise en place",
       "rotateClockwise": "Tourner sens horaire",
       "rotateCounter": "Tourner sens antihoraire",
       "shuffleRandom": "Melanger aleatoirement",
